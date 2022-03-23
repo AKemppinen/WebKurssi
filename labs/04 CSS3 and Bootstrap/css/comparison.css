@@ -1,0 +1,35 @@
+body {
+    font-family: sans-serif;
+}
+
+thead {
+    background-color: red;
+    color: white;
+}
+thead th:first-child {
+    text-transform: uppercase;
+    border-right: 1px solid gray;
+}
+td:first-child {
+    font-weight: bold;
+    border-right: 1px solid gray;
+}
+table {
+    border: 1px solid gray;
+    border-spacing: 0px;
+
+}
+caption {
+    text-transform: uppercase;
+    border: 1px solid gray;
+    border-bottom: 0px;
+    font-weight: bold;
+}
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+td {
+    padding-right: 6px;
+    padding-bottom: 4px;
+    font-size: smaller;
+}
