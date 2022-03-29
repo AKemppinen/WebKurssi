@@ -10,6 +10,7 @@
 		map.onmousemove = showCoords;
 		var mydiv = document.getElementById("mydiv");
 		mydiv.onclick = addtext;
+        createList();
 	}
 	
 	function showCoords(eventObj) {
@@ -28,6 +29,18 @@
 			alert("Looks like you have an old browser!");
 		}
 	}
+
+    function createList() {
+        const ul = document.createElement('ul');
+
+        for (i = 1; i <= 10; i++) {
+            let li = document.createElement('li');
+            li.innerHTML += 'lista: ' + i;
+            ul.appendChild(li);
+        }
+        document.body.appendChild(ul);
+    }
+
   </script>
 </head>
 <body>

@@ -10,12 +10,18 @@
   </style>
   <script>
 window.onload = function() {
-	var div = document.getElementById("clickme");
+	let div = document.getElementById("clickme");
+    let text = document.getElementById("textHover");
 	if (div.addEventListener) {
 		div.addEventListener("click", handleClick, false);
 	} else if (div.attachEvent) {
 		div.attachEvent("click", handleClick);
 	}
+    if (text.addEventListener) {
+      text.addEventListener("mouseover", mouseOver, false);
+    } else if (div.attachEvent) {
+      text.attachEvent("mouseover", mouseOver());
+    }
 };
 
 function handleClick(e) {
@@ -29,9 +35,24 @@ function handleClick(e) {
 	alert("You clicked on " + target.id);
 }
 
+function mouseOver(e) {
+  let evt = e || window.event;
+  let target;
+  if (evt.target) {
+    target = evt.target;
+  } else {
+    target = evt.srcElement;
+  }
+  alert("You hovered on " + target.id);
+
+}
+
   </script>
 </head>
 <body>
 <span id="clickme">Click me!</span>
+<div id="textHover" style="cursor: pointer">
+  Test text
+</div>
 </body>
 </html>
