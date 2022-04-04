@@ -10,12 +10,16 @@ var notes = (function() {
             }
             return false;
         },
-        remove: function(index) {},
+        remove: function(index) {
+            list.splice(index, 1);
+        },
         count: function() {
             return list.length;
         },
         list: function() {},
-        find: function(str) {},
+        find: function(str) {
+            list.find(str);
+        },
         clear: function() {
             list.splice(0, list.length);
         }
