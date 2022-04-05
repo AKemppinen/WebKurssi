@@ -42,11 +42,39 @@ window.onload = function() {
 	};
 };
 
+window.onload = function() {
+	var speed = 0;
+	var div = document.getElementById("playback-speed");
+
+	var minus = document.getElementById("minus");
+	var zero = document.getElementById("zero");
+	var plus = document.getElementById("plus");
+	plus.onclick = function() {
+		speed++;
+		div.innerHTML = "Speed is: " + speed;
+	};
+	zero.onclick = function() {
+		speed = 0;
+		div.innerHTML = "Speed is: " + speed;
+	};
+	minus.onclick = function() {
+		speed--;
+		div.innerHTML = "Speed is: " + speed;
+	};
+};
+
 </script> 
 </head> 
 <body>
 	<button id="clickme">Click me!</button>
 	<div id="message"></div>
+
+	<div id="playback-speed">Speed is: 0</div>
+
+	<button id="minus">-</button>
+	<button id="zero">0</button>
+	<button id="plus">+</button>
+
 </body>
 </html>
 
